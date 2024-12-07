@@ -1,0 +1,7 @@
+[project]
+name = "aoc"
+version = "0.1.0"
+description = "Solutions to the Advent of Code 2024 challenges"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
