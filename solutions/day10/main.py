@@ -5,6 +5,7 @@
 
 from collections import deque
 
+
 def getIndex(grid, value):
     idx = []
     for i in range(len(grid)):
@@ -13,15 +14,11 @@ def getIndex(grid, value):
                 idx.append((i, j))
     return idx
 
+
 def BFS(grid, start_position):
 
-    directions = [
-        (-1, 0),  
-        (1, 0),   
-        (0, -1),  
-        (0, 1)    
-    ]
-    
+    directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
     visited = set()
     queue = deque([(start_position[0], start_position[1], 0)])
     nines = set()
@@ -32,18 +29,21 @@ def BFS(grid, start_position):
         if grid[current_row][current_col] == 9:
             nines.add((current_row, current_col))
             continue
-            
+
         visited.add((current_row, current_col))
 
         for move_row, move_col in directions:
             new_row = current_row + move_row
             new_col = current_col + move_col
 
-            
-            if 0 <= new_row < len(grid) and 0 <= new_col < len(grid) and (new_row, new_col) not in visited:
+            if (
+                0 <= new_row < len(grid)
+                and 0 <= new_col < len(grid)
+                and (new_row, new_col) not in visited
+            ):
                 if grid[new_row][new_col] == next_num + 1:
                     queue.append((new_row, new_col, next_num + 1))
-    
+
     return len(nines)
 
 
@@ -61,6 +61,7 @@ def main():
         sum += nines
 
     print(sum)
-    
+
+
 if __name__ == "__main__":
     main()

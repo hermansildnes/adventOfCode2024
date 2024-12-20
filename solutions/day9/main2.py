@@ -11,6 +11,7 @@ def unpackData(data):
                 unpacked.append(" ")
     return unpacked
 
+
 def getBlocks(data):
     blocks = []
     block = []
@@ -29,15 +30,17 @@ def getBlocks(data):
         blocks.append(block)
     return blocks
 
+
 def calcChecksum(data):
     sum = 0
-    for i, value in (enumerate(data)):
+    for i, value in enumerate(data):
         sum += i * int(value)
     return sum
 
+
 def main():
     with open("input2", "r") as file:
-        data = file.read()    
+        data = file.read()
 
     unpacked = unpackData(data)
 
@@ -46,8 +49,7 @@ def main():
 
     blocks = getBlocks(unpacked)
     # print(blocks)
-    #print(calcChecksum(unpacked))
-
+    # print(calcChecksum(unpacked))
 
     for i, block in enumerate(blocks[::-1]):
         while blocks[-1][0] == " ":
@@ -60,7 +62,7 @@ def main():
 
     for block in sorted:
         print(block)
-                
+
 
 if __name__ == "__main__":
     main()

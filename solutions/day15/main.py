@@ -2,7 +2,7 @@
 # Main difference is the way the grid is updated, which I do recursively
 # here to accomodate boxes pushing boxes. Otherwise, quite straight
 # forward. Just a matter of reading the instructions and updating the grid.
-# Ran into some trouble because I did not make a deep copy of the 
+# Ran into some trouble because I did not make a deep copy of the
 # grid at first...
 
 
@@ -50,7 +50,6 @@ def main():
         data = file.read().split("\n\n")
         grid = [list(line) for line in data[0].splitlines()]
         instructions = [char for char in data[1] if char != "\n"]
-
 
     for instruction in instructions:
         current_pos = getCurrentPos(grid, "@")

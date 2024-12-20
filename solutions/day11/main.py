@@ -3,10 +3,11 @@
 # part 2, but the nature of the challenge makes it impossible
 # to solve without actually running through all the iterations,
 # and no matter my optimizations (including doing it in C++),
-# I still run out of resources or it takes too long... I got 
+# I still run out of resources or it takes too long... I got
 # rid of the string/int casting in my attempts at part 2, but
-# kept them here cause it was my original (although awful) 
+# kept them here cause it was my original (although awful)
 # approach
+
 
 def main():
     with open("input", "r") as file:
@@ -17,17 +18,17 @@ def main():
     for i in range(25):
         for el in data:
             if len(el) % 2 == 0:
-                new.append(str(int(el[:len(el)//2])))
-                new.append(str(int(el[len(el)//2:])))
+                new.append(str(int(el[: len(el) // 2])))
+                new.append(str(int(el[len(el) // 2 :])))
             elif el == "0":
                 new.append("1")
             else:
-                new.append(str(int(el)*2024))
+                new.append(str(int(el) * 2024))
         data = new
         new = []
-            
+
     print(len(data))
-    
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 # Part 1 was pretty easy today
 
+
 def unpackData(data):
     unpacked = []
     index = 0
@@ -13,15 +14,17 @@ def unpackData(data):
                 unpacked.append(" ")
     return unpacked
 
+
 def calcChecksum(data):
     sum = 0
-    for i, value in (enumerate(data)):
+    for i, value in enumerate(data):
         sum += i * value
     return sum
 
+
 def main():
     with open("input", "r") as file:
-        data = file.read()    
+        data = file.read()
 
     unpacked = unpackData(data)
 
